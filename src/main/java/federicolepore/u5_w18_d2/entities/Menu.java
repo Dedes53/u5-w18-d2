@@ -1,20 +1,27 @@
 package federicolepore.u5_w18_d2.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 @Getter
 @ToString
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class Menu {
     private List<Pizza> pizzaList;
     private List<Drink> drinkList;
     private List<Topping> toppingList;
+
+    // costruttore con la classe Menu come @Component
+    public Menu(List<Pizza> pizzaList, List<Drink> drinkList, List<Topping> toppingLIst) {
+        this.pizzaList = pizzaList;
+        this.drinkList = drinkList;
+        this.toppingList = toppingLIst;
+    }
 
     public void printMenu() {
         System.out.println("******* Menu *******");

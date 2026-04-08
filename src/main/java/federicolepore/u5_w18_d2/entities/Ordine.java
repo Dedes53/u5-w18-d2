@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -18,7 +18,7 @@ public class Ordine {
     private int numeroOrdine;
     private StatoOrdine stato;
     private int numeroCoperti;
-    private LocalDate oraOrine;
+    private LocalDateTime oraOrine;
     private List<Pizza> pizzeOrdinate;
     private List<Drink> drinkOrdinati;
     private Tavolo tavolo;
@@ -29,7 +29,7 @@ public class Ordine {
         this.numeroOrdine = numeroOrdine;
         this.stato = StatoOrdine.IN_CORSO;
         this.numeroCoperti = numeroCoperti;
-        this.oraOrine = LocalDate.now();
+        this.oraOrine = LocalDateTime.now();
         this.pizzeOrdinate = pizzeOrdinate;
         this.drinkOrdinati = drinkOrdinati;
         this.tavolo = tavolo;

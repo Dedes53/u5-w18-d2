@@ -117,28 +117,28 @@ public class AppConfig {
     }
 
     //menu
-    @Bean(name = "menu")
-    public Menu menuBean() {
-        List<Pizza> pizzaList = new ArrayList<>();
-        List<Drink> drinkList = new ArrayList<>();
-        List<Topping> toppingsList = new ArrayList<>();
-
-        pizzaList.add(pizzaMargheritaBean());
-        pizzaList.add(pizzaHawaianaBean());
-        pizzaList.add(pizzaSalameBean());
-
-        drinkList.add(limonataBean());
-        drinkList.add(acquaBean());
-        drinkList.add(vinoBean());
-
-        toppingsList.add(toppingPomodoroBean());
-        toppingsList.add(toppingFormaggioBean());
-        toppingsList.add(toppingProsciuttoBean());
-        toppingsList.add(toppingAnanasBean());
-        toppingsList.add(toppingSalameBean());
-
-        return new Menu(pizzaList, drinkList, toppingsList);
-    }
+//    @Bean(name = "menu")
+//    public Menu menuBean() {
+//        List<Pizza> pizzaList = new ArrayList<>();
+//        List<Drink> drinkList = new ArrayList<>();
+//        List<Topping> toppingsList = new ArrayList<>();
+//
+//        pizzaList.add(pizzaMargheritaBean());
+//        pizzaList.add(pizzaHawaianaBean());
+//        pizzaList.add(pizzaSalameBean());
+//
+//        drinkList.add(limonataBean());
+//        drinkList.add(acquaBean());
+//        drinkList.add(vinoBean());
+//
+//        toppingsList.add(toppingPomodoroBean());
+//        toppingsList.add(toppingFormaggioBean());
+//        toppingsList.add(toppingProsciuttoBean());
+//        toppingsList.add(toppingAnanasBean());
+//        toppingsList.add(toppingSalameBean());
+//
+//        return new Menu(pizzaList, drinkList, toppingsList);
+//    }
 
 
 }
