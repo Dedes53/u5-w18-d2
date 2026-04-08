@@ -1,9 +1,8 @@
 package federicolepore.u5_w18_d2.config;
 
-import federicolepore.u5_w18_d2.entities.Drink;
-import federicolepore.u5_w18_d2.entities.Menu;
-import federicolepore.u5_w18_d2.entities.Pizza;
-import federicolepore.u5_w18_d2.entities.Topping;
+import federicolepore.u5_w18_d2.entities.*;
+import federicolepore.u5_w18_d2.enumerators.StatoTavolo;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +11,40 @@ import java.util.List;
 
 @Configuration
 public class AppConfig {
+
+    //    proseguo giorno 2
+
+    @Value("${menu.costo-coperto}")
+    private double costoCoperto;
+
+    // tavoli
+    @Bean(name = "tavolo1")
+    public Tavolo tavolo1Bean() {
+        return new Tavolo(1, 4, StatoTavolo.LIBERO);
+    }
+
+    @Bean(name = "tavolo2")
+    public Tavolo tavolo2Bean() {
+        return new Tavolo(2, 6, StatoTavolo.LIBERO);
+    }
+
+    //ordine
+    @Bean(name = "ordine1")
+    public Ordine ordine1Bean() {
+        List<Pizza> pizze = new ArrayList<>();
+        pizze.add(pizzaMargheritaBean());
+        pizze.add(pizzaSalameBean());
+
+        List<Drink> drink = new ArrayList<>();
+        drink.add(acquaBean());
+        drink.add(limonataBean());
+
+        Tavolo tavolo = tavolo1Bean();
+        tavolo.setStato(StatoTavolo.OCCUPATO);
+
+        return new Ordine(1, 2, tavolo, pizze, drink, costoCoperto);
+    }
+
 
     //topping
     @Bean(name = "topping_pomodoro")
@@ -38,7 +71,6 @@ public class AppConfig {
     public Topping toppingSalameBean() {
         return new Topping("Salame", 86, 0.99);
     }
-
 
     //pizze
     @Bean(name = "pizza_margherita")
@@ -68,7 +100,6 @@ public class AppConfig {
         return new Pizza("Salami Pizza", toppingList);
     }
 
-
     //bibite
     @Bean(name = "limonata")
     public Drink limonataBean() {
@@ -84,7 +115,6 @@ public class AppConfig {
     public Drink vinoBean() {
         return new Drink("Vino", 607, 7.49);
     }
-
 
     //menu
     @Bean(name = "menu")
@@ -109,5 +139,6 @@ public class AppConfig {
 
         return new Menu(pizzaList, drinkList, toppingsList);
     }
+
 
 }

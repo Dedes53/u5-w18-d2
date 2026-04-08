@@ -1,7 +1,10 @@
 package federicolepore.u5_w18_d2.entities;
 
+import lombok.Getter;
+
 import java.util.List;
 
+@Getter
 public class Pizza {
 
     private String nome;
