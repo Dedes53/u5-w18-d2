@@ -13,7 +13,7 @@ public class Pizza {
         this.nome = nome;
         this.toppingList = toppingList;
         this.calorie = setCalorie(toppingList);
-        this.prezzo = prezzo;
+        this.prezzo = setPrice(toppingList);
     }
 
     public int setCalorie(List<Topping> toppingList) {

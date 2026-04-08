@@ -1,9 +1,9 @@
 package federicolepore.u5_w18_d2.config;
 
-import federicolepore.u5_w18_d1.entities.Drink;
-import federicolepore.u5_w18_d1.entities.Menu;
-import federicolepore.u5_w18_d1.entities.Pizza;
-import federicolepore.u5_w18_d1.entities.Topping;
+import federicolepore.u5_w18_d2.entities.Drink;
+import federicolepore.u5_w18_d2.entities.Menu;
+import federicolepore.u5_w18_d2.entities.Pizza;
+import federicolepore.u5_w18_d2.entities.Topping;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
